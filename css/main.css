@@ -1,0 +1,78 @@
+:root {
+  --headerFont: "Crete Round", serif;
+  --bodyFont: "Poppins", sans-serif;
+  /* colors */
+  /* background */
+  --backgroundColor: #0f0326;
+  --onBackgroundColor: #ffffff;
+
+  /* surface */
+  --surfaceColor: #252323;
+  --onSurfaceColor: #ffffff;
+
+  /* accent */
+
+  --primaryAccentColor: #69dc9e;
+  --secondaryAccentColor: #feefe5;
+}
+
+.dark {
+  /* colors */
+  /* background */
+  --backgroundColor: #8f5cee;
+  --onBackgroundColor: #000000;
+
+  /* surface */
+  --surfaceColor: #0f0326;
+  --onSurfaceColor: #ffffff;
+
+  /* accent */
+
+  --primaryAccentColor: #69dc9e;
+  --secondaryAccentColor: #feefe5;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--backgroundColor);
+  color: var(--onBackgroundColor);
+  place-items: center;
+  justify-content: center;
+  min-height: 100svh;
+  font-size: 16px;
+  gap: 1rem;
+  font-family: var(--bodyFont);
+}
+
+.button {
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--onSurfaceColor);
+  background-color: var(--surfaceColor);
+  padding: 1rem;
+  font-size: 1rem;
+  border: 1px solid var(--onSurfaceColor);
+  border-radius: 0.5rem;
+}
+
+.button.primary {
+  background-color: var(--primaryAccentColor);
+}
+
+.button.secondary {
+  background-color: var(--secondaryAccentColor);
+  color: var(--surfaceColor);
+}
+
+.coolSection .button {
+  --surfaceColor: #6900af;
+  --primaryAccentColor: #ff0066;
+}
