@@ -11,9 +11,18 @@
   --onSurfaceColor: #ffffff;
 
   /* accent */
-
   --primaryAccentColor: #69dc9e;
   --secondaryAccentColor: #feefe5;
+
+  /* sizies */
+  --scalingFactor: 1.25;
+
+  --sizeXS: 1rem;
+  --sizeSM: calc(var(--sizeXS) * var(--scalingFactor));
+  --sizeMD: calc(var(--sizeSM) * var(--scalingFactor)); /* h4 */
+  --sizeLG: calc(var(--sizeMD) * var(--scalingFactor)); /* h3 */
+  --sizeXL: calc(var(--sizeLG) * var(--scalingFactor)); /* h2 */
+  --sizeXXL: calc(var(--sizeXL) * var(--scalingFactor)); /* h1 */
 }
 
 .dark {
@@ -43,12 +52,51 @@ body {
   flex-direction: column;
   background-color: var(--backgroundColor);
   color: var(--onBackgroundColor);
-  place-items: center;
-  justify-content: center;
   min-height: 100svh;
   font-size: 16px;
   gap: 1rem;
   font-family: var(--bodyFont);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--headerFont);
+}
+
+h1 {
+  font-size: var(--sizeXXL);
+}
+h2 {
+  font-size: var(--sizeXL);
+}
+h3 {
+  font-size: var(--sizeLG);
+}
+h4 {
+  font-size: var(--sizeMD);
+}
+
+header * {
+  display: flex;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--sizeSM);
+  background-color: var(--primaryAccentColor);
+}
+header nav ul {
+  align-items: center;
+  gap: 1rem;
+}
+header nav .button {
+  --primaryAccentColor: var(--secondaryAccentColor);
+  color: var(--surfaceColor);
 }
 
 .button {
@@ -57,10 +105,13 @@ body {
   text-decoration: none;
   color: var(--onSurfaceColor);
   background-color: var(--surfaceColor);
-  padding: 1rem;
-  font-size: 1rem;
-  border: 1px solid var(--onSurfaceColor);
   border-radius: 0.5rem;
+
+  /* box-sizing: border-box; */
+  border: 1px solid var(--onSurfaceColor);
+  padding: 1rem;
+  margin: 0;
+  font-size: 1rem;
 }
 
 .button.primary {
@@ -70,9 +121,4 @@ body {
 .button.secondary {
   background-color: var(--secondaryAccentColor);
   color: var(--surfaceColor);
-}
-
-.coolSection .button {
-  --surfaceColor: #6900af;
-  --primaryAccentColor: #ff0066;
 }
