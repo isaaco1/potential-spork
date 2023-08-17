@@ -1,0 +1,54 @@
+:root {
+  /* colors */
+  /* background */
+  --background-color: #0f0326;
+  --onBackgroundColor: #ffffff;
+
+  /* surface */
+  --surfaceColour: #0f0326;
+  --onSurfaceColor: #ffffff;
+
+  /* accent */
+  --primaryAccentColor: #69dc9e;
+  --secondaryAccentColor: #feefe5;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: var(--onSurfaceColor);
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background-color);
+  place-items: center;
+  justify-content: center;
+  min-height: 100svh;
+  font-size: 1rem;
+  gap: 1rem;
+}
+
+.button {
+  text-decoration: none;
+  color: var(--onSurfaceColor);
+  background-color: var(--surfaceColour);
+  border: 1px solid;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.button.primary {
+  background-color: var(--primaryAccentColor);
+}
+
+.button.secondary {
+  background-color: var(--secondaryAccentColor);
+  color: var(--surfaceColour);
+}
+
+.coolSection {
+  --surfaceColour: purple;
+}
